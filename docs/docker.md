@@ -165,5 +165,12 @@ networks:
 
 Pro tip: You can also express any option you pass to the docker run command as YAML in a Compose file.
 
+# Kubernetes (or K8s) on Docker Desktop
 
+The Kubernetes server runs as containers and installs the 
 
+```
+/usr/local/bin/kubect1
+```
+
+ command on your machine.
