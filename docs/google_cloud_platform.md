@@ -2,8 +2,11 @@
 
 ## On VM
 
+First, clone the practice project from my own Github repository, and get the working web app. Add it to the reference image before creating the template:
+
 ```
-git clone https://www.github.com/google/it-cert-automation-practice.git
+# git clone https://www.github.com/google/it-cert-automation-practice.git
+git clone https://github.com/antazo/it-cert-automation-practice.git
 cd ~/it-cert-automation-practice/Course5/Lab3
 ```
 
