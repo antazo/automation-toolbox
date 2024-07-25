@@ -1,4 +1,4 @@
-# Qwiklab: "Creating a VM template and Automating deployment"
+# Creating a VM template and Automating deployment
 
 ## On VM
 ```
