@@ -32,7 +32,8 @@ By utilizing Deployments, you can manage your Python web server's life cycle mor
 
 Kubernetes YAML files define and configure Kubernetes resources. They serve as a declarative blueprint for your application infrastructure, describing what resources should be created, what images to use, how many replicas of your service should be running, and more.
 
- - Structure of Kubernetes YAML files
+## Structure of Kubernetes YAML files
+
 Every Kubernetes YAML file follows a specific structure with key components: API version, kind, metadata, and spec. These components provide Kubernetes with everything it needs to manage your resources as desired. 
 
  * apiVersion: This field indicates the version of the Kubernetes API you're using to create this particular resource.
@@ -74,7 +75,8 @@ In the YAML file above, we're defining a "Deployment" resource for a Kubernetes 
  - Key components and fields in Kubernetes YAML files
  YAML files can include many other fields, depending on the type of object and your specific needs.
 
-<b>Pods</b>
+### Pods
+
 As you’ve learned, a Pod is the smallest and simplest unit in the Kubernetes object model. It represents a single instance of a running process in a cluster and can contain one or more containers. Because it is the simplest unit, a Pod’s YAML file typically contains the basic key components highlighted above:
 
  * apiVersion: This is the version of the Kubernetes API you're using to create this object.
@@ -91,7 +93,8 @@ As you’ve learned, a Pod is the smallest and simplest unit in the Kubernetes o
 
  ** restartPolicy: Defines the Pod's restart policy (e.g., "Always," "OnFailure," "Never")
 
-<b>Deployments</b>
+### Deployments
+
 A Deployment is a higher-level concept that manages Pods and ReplicaSets. It allows you to describe the desired state of your application, and the Deployment controller changes the actual state to the desired state at a controlled rate. In addition to the fields mentioned above, a Deployment's YAML file includes:
 
  * spec.replicas: This is the number of Pods you want to run.
@@ -100,7 +103,8 @@ A Deployment is a higher-level concept that manages Pods and ReplicaSets. It all
 
  * spec.template: This is the template for the Pods the Deployment creates.
 
-<b>Services</b>
+### Services
+
 A Service in Kubernetes is an abstraction which defines a logical set of Pods and a policy by which to access them. Key components in a Service's YAML file include:
 
  * spec.type: This defines the type of Service. Common types include ClusterIP, NodePort, and LoadBalancer.
@@ -109,10 +113,12 @@ A Service in Kubernetes is an abstraction which defines a logical set of Pods an
 
  * spec.selector: This is how the Service identifies the Pods it should manage.
 
-<b>ConfigMaps</b>
+### ConfigMaps
+
 A ConfigMap is an API object used to store non-confidential data in key-value pairs. In addition to the common fields, a ConfigMap's YAML file includes the data field, which is where you define the key-value pairs.
 
-<b>Secrets</b>
+### Secrets
+
 A Secret is similar to a ConfigMap, but is used to store sensitive information, like passwords or API keys. A Secret's YAML file includes:
 
  * type: The type of Secret. Common types include Opaque (for arbitrary user-defined data), kubernetes.io/service-account-token (for service account tokens), and others.
