@@ -15,16 +15,16 @@ systemctl is a utility for controlling the systemd system and service manager. I
 
 Let's now troubleshoot the issue. Since the webpage returns an HTTP error status code, let's check the status of the web server i.e apache2.
 
-'''
+```
 sudo systemctl status apache2
 sudo systemctl restart apache2
-'''
+```
 
 To find which processes are listening on which ports, we'll be using the netstat command, which returns network-related information. Here, we'll be using a combination of flags along with the netstat command to check which process is using a particular port:
 
-'''
+```
 sudo netstat -nlp
-'''
+```
 
 
 Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
@@ -36,45 +36,45 @@ tcp        0      0 0.0.0.0:80              0.0.0.0:*               LISTEN      
 1347/python3
 
 
-'''
+```
 ps -ax | grep python3
-'''
+```
 
     498 ?        Ss     0:00 /usr/bin/python3 /usr/bin/networkd-dispatcher --run-startup-triggers
     531 ?        Ssl    0:00 /usr/bin/python3 /usr/share/unattended-upgrades/unattended-upgrade-shutdown --wait-for-signal
    1347 ?        Ss     0:00 python3 /usr/local/bin/jimmytest.py
    3012 pts/0    S+     0:00 grep --color=auto python3
 
-'''
+```
 cat /usr/local/bin/jimmytest.py
-'''
+```
 
-'''
+```
 sudo kill 1347
-'''
+```
 
 This time you'll notice that similar process running again with a new PID.
 
 This kind of behavior should be caused by service. Since this is a python script created by Jimmy, let's check for the availability of any service with the keywords "python" or "jimmy".
 
-'''
+```
 sudo systemctl --type=service | grep jimmy
-'''
+```
 
 There is a service available named jimmytest.service. We should now stop and disable this service using the following command:
 
-'''
+```
 sudo systemctl stop jimmytest && sudo systemctl disable jimmytest
-'''
+```
 
 The service is now removed.
 
 To confirm that no processes are listening on 80, using the following command:
 
-'''
+```
 sudo netstat -nlp
-'''
+```
 
-'''
+```
 sudo systemctl start apache2
-'''
+```

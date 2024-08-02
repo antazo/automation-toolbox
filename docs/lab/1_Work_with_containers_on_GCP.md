@@ -49,7 +49,7 @@ mkdir test && cd test
 
 Create a Dockerfile:
 
-'''
+```
 cat > Dockerfile <<EOF
 # Use an official Node runtime as the parent image
 FROM node:lts
@@ -66,7 +66,7 @@ EXPOSE 80
 # Run app.js using node when the container launches
 CMD ["node", "app.js"]
 EOF
-'''
+```
 
 This file instructs the Docker daemon on how to build your image.
 
@@ -77,7 +77,7 @@ Then expose the container's port so it can accept connections on that port and f
 
 Run the following to create the node application:
 
-'''
+```
 cat > app.js <<EOF
 const http = require('http');
 
@@ -99,7 +99,7 @@ process.on('SIGINT', function() {
     process.exit();
 });
 EOF
-'''
+```
 
 This is a simple HTTP server that listens on port 80 and returns "Hello World".
 
@@ -107,9 +107,9 @@ Now build the image.
 
 Note again the ".", which means current directory so you need to run this command from within the directory that has the Dockerfile:
 
-'''
+```
 docker build -t node-app:0.1 .
-'''
+```
 
 The -t is to name and tag an image with the name:tag syntax. The name of the image is node-app and the tag is 0.1. The tag is highly recommended when building Docker images. If you don't specify a tag, the tag will default to latest and it becomes more difficult to distinguish newer images from older ones. Also notice how each line in the Dockerfile above results in intermediate container layers as the image is built.
 
@@ -184,9 +184,9 @@ docker exec -it [container_id] bash
 
 The -it flags let you interact with a container by allocating a pseudo-tty and keeping stdin open. Notice bash ran in the WORKDIR directory (/app) specified in the Dockerfile. From here, you have an interactive shell session inside the container to debug.
 
-'''
+```
 exit
-'''
+```
 
 You can examine a container's metadata in Docker by using Docker inspect:
 docker inspect [container_id]
