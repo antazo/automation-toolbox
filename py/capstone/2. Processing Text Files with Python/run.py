@@ -1,6 +1,6 @@
 #! /usr/bin/env python3
 
-# Google IT Automation Professional CCertificate
+# Google IT Automation Professional Certificate
 # CAPSTONE Module 2: Processing Text Files with Python
 # Dictionaries and Uploading to Running Web Service
 
