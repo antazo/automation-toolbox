@@ -1,8 +1,10 @@
 #! /usr/bin/env python3
+'''
+Google IT Automation Professional Certificate
+CAPSTONE Module 2: Processing Text Files with Python
 
-# Google IT Automation Professional Certificate
-# CAPSTONE Module 2: Processing Text Files with Python
-# Dictionaries and Uploading to Running Web Service
+Dictionaries and Uploading to Running Web Service
+'''
 
 import os
 import requests
