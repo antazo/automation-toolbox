@@ -1,0 +1,13 @@
+---
+  - name: "My ansible playbook"
+    hosts: localhost
+
+    tasks:
+
+      - name: "Test ping"
+        ping:
+
+      - name: "Check files in directory"
+        find:
+          paths: ~/ansible/
+          file_type: file
