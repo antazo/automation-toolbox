@@ -1,9 +1,11 @@
 # Automation Toolbox
-### Python · Bash · PowerShell
+### Python · Bash · PowerShell · Ansible
 
 Placeholder for Python, Bash and PowerShell material, and other CLI snippets that I want to keep track of, for future reference and educational purposes.
 
- * Some of the scripts were used for Qwiklabs, Colab, and Jupyter assessments.
+Some of the resources were used for:
+ * Google IT Automation with Python Professional Certificate.
+ * Network Automation Professional Certificate by Arista Networks.
 
 ## Pythonic modules cheat sheet:
 Multiprocessing (CPU-bound tasks):
